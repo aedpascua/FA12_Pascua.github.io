@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>FA12_Pascua</title>
+
+  <style>
+    table, tr, td {
+      border: 1px solid black;
+      padding: 3px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <p>[enter a number between 2 and 10]</p>
+  <input id="num1"> by <input id="num2"> </br>
+  </br>
+  <button type="button" onclick="myFunction()">Click here when ready!</button>
+
+  <div id="table"> </div>
+
+  <script>
+    function myFunction() {
+      let i = document.getElementById("num1").value;
+      let k = document.getElementById("num2").value;
+      if (isNaN(i) || isNaN(k) || i < 2 || k < 2 || i > 10 || k > 10) {
+        alert("Please enter numbers between 2 and 10");
+	  return 0;
+      }
+      var table = "<table>"
+      for (x = 1; x <= i; x++) {
+        table += "<tr>";
+        for (y = 1; y <= k; y++) {
+          table += "<td>" + x * y + "</td>"
+        }
+      }
+      document.getElementById("table").innerHTML = "</br>" + table;
+    }
+  </script>
+</body>
+
+</html>
